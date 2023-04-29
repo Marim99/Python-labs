@@ -24,16 +24,6 @@ class SqlHandler():
         except mysql.connector.Error as e:
             raise Exception("Error connecting to MySQL database: {}".format(e))
 
-    # def get_all_data(self):
-    #     try:
-    #         self.connect()
-    #         query = '''SELECT id, first_name, last_name, age, department, salary
-    #                 FROM employees'''
-    #         rows = self.execute_query(query)
-    #         self.close()
-    #         return rows
-    #     except mysql.connector.Error as e:
-    #         raise Exception("Error connecting to MySQL database: {}".format(e))
     def get_all_data(self, table):
         try:
             self.connect()
@@ -83,12 +73,10 @@ class SqlHandler():
 
     def create_table(self, table_name, columns):
         try:
-            # conn=self.connect()
             columns_str = ", ".join(columns)
             query = f"CREATE TABLE {table_name} ({columns_str})"
             self.cursor.execute(query)
-            # conn.commit()
-            self.close()
+
         except mysql.connector.Error as e:
             print(e)
 

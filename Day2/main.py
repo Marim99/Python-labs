@@ -3,6 +3,41 @@ from Employee import Employee
 from Manager import Manager
 
 
+def create_table_employees():
+    db = SqlHandler(host="localhost", user="root",
+                    password="yourPassword", database="pythondb")
+    db.connect()
+    table_name = "employees2"
+    columns = [
+        "id INT AUTO_INCREMENT PRIMARY KEY",
+        "first_name VARCHAR(255) NOT NULL",
+        "last_name VARCHAR(255) NOT NULL",
+        "age INT",
+        "department VARCHAR(255)",
+        "salary INT"
+    ]
+    db.create_table(table_name, columns)
+    db.close()
+
+
+def create_table_managers():
+    db = SqlHandler(host="localhost", user="root",
+                    password="mypassword", database="mydatabase")
+    db.connect()
+    table_name = "managers"
+    columns = [
+        "id INT AUTO_INCREMENT PRIMARY KEY",
+        "first_name VARCHAR(255) NOT NULL",
+        "last_name VARCHAR(255) NOT NULL",
+        "age INT",
+        "department VARCHAR(255)",
+        "salary INT"
+        "managed_department VARCHAR(255)"
+    ]
+    db.create_table(table_name, columns)
+    db.close()
+
+
 def print_menu():
     print("Menu:")
     print("a - Add new employee")
@@ -104,6 +139,5 @@ def main():
             print("Invalid choice. Please try again.")
 
 
-if __name__ == "__main__":
-    main()
-# Employee.print_employees_list()
+# if __name__ == "__main__":
+#     main()
