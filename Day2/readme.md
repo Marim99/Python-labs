@@ -30,7 +30,7 @@ This class handles interactions with the database and has the following methods:
 | Method                                    | Description                                                       |
 |-------------------------------------------|-------------------------------------------------------------------|
 | `connect()`                               | Establishes a connection to the database.                         |
-| `clos()`                            | Closes the connection to the database.                            |
+| `close()`                            | Closes the connection to the database.                            |
 | `create_table(table_name, columns)`                          | Creates a table for storing employee information.                 |
 | `insert_to_database(table, data)`              | Inserts a new records into the table.                         |
 | `update_database(emp_id, new_department)` | Updates the department of an existing employee. |
