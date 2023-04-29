@@ -39,7 +39,7 @@ This class handles interactions with the database and has the following methods:
 | `execute_query(query, params=None)`                               | execute query.                 |
 
 
-## to Run the App (run main.py)
+## to Run the App 
 - First create the database in your loaclhost 
 - Run Create_tables.py to create tables Note (you must change SqlHandler(host="localhost", user="root",
                     password="mypassword", database="mydatabase") with your own data)
